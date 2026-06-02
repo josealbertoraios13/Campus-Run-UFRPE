@@ -1,35 +1,53 @@
+from utils import WINDOW_WIDTH, WINDOW_HEIGHT
+from game.views.game_manager import GameManager
+from pathlib import Path
 import arcade
 
 class Game(arcade.View):
-    """
-        Main application class.
-
-        NOTE: Go ahead and delete the methods you don't need.
-        If you do need a method, delete the 'pass' and replace it
-        with your own code. Don't leave 'pass' in this program.
-    """
 
     def __init__(self) -> None:
         super().__init__()
 
-        self.background_color = arcade.color.AMAZON
+        font_path = Path("assets/font/Jersey10-Regular.ttf")
+        arcade.load_font(font_path)
 
-        # If you have sprite lists, you should create them here,
-        # and set them to None
+        menu_image_path = Path("assets/images/main_menu.png")
+        self.background = arcade.load_texture(menu_image_path)
+
+
+        self.title = arcade.Text(
+            text="Campus Run UFRPE",
+            x=WINDOW_WIDTH / 2,
+            y=WINDOW_HEIGHT / 2 + 200,
+            color=arcade.color.WHITE,
+            font_size=82,
+            font_name="Jersey 10",
+            anchor_x="center",
+        )
+
+        self.press_enter = arcade.Text(
+            text="Press ENTER to start",
+            x=WINDOW_WIDTH / 2,
+            y=WINDOW_HEIGHT / 2 - 120,
+            color=arcade.color.WHITE,
+            font_size=20,
+            font_name="Jersey 10",
+            anchor_x="center")
     
-    def reset(self):
-        """Reset the game to the initial state."""
-        pass
-
     def on_draw(self) -> bool | None:
-        """Render the screen"""
-        return super().on_draw()
-    
+
+        arcade.draw_texture_rect(
+            texture=self.background,
+            rect=arcade.LBWH(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT)
+        )
+
+        self.title.draw()
+        self.press_enter.draw()
+
     def on_update(self, delta_time: float) -> bool | None:
-        """
-            All the logic to move, and the game logic goes here.
-            Normally, you will call update() on the sprites lists that
-            need it.
-        """
         return super().on_update(delta_time)
-    
+
+    def on_key_press(self, symbol: int, modifiers: int) -> bool | None:
+        if symbol == arcade.key.ENTER:
+            in_game = GameManager()
+            self.window.show_view(in_game)
