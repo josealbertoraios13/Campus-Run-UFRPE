@@ -8,7 +8,7 @@ import arcade
 
 class System(ABC):
     @abstractmethod
-    def update(self, delta_time: float) -> None:
+    def update(self, delta_time: float,) -> None:
         pass
 
 class GameObject(arcade.Sprite):

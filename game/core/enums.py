@@ -16,7 +16,7 @@ class PlayerState(Enum):
     JUMPING = "jumping"
     FALLING = "falling"
 
-class Direction(Enum):
+class Direction():
     LEFT = -1
     RIGHT = 1
 
