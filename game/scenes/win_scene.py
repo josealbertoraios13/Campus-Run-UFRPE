@@ -58,7 +58,7 @@ class WinScene(arcade.View):
         self.score = arcade.Text(
             text=f"Pontuação total: {status['score']}",
             x=GameConfig.WINDOW_WIDTH // 2,
-            y=GameConfig.WINDOW_HEIGHT // 2 - 180,
+            y=GameConfig.WINDOW_HEIGHT // 2 - 240,
             color=arcade.color.WHITE,
             font_size=VisualConfig.MENU_SUBTITLE_SIZE,
             font_name=VisualConfig.FONT_NAME,
@@ -68,7 +68,7 @@ class WinScene(arcade.View):
         self.instructions = arcade.Text(
             text="Pressione ENTER para voltar ao menu",
             x=GameConfig.WINDOW_WIDTH // 2,
-            y=GameConfig.WINDOW_HEIGHT // 2 - 260,
+            y=GameConfig.WINDOW_HEIGHT // 2 - 280,
             color=arcade.color.WHITE,
             font_size=VisualConfig.MENU_SUBTITLE_SIZE,
             font_name=VisualConfig.FONT_NAME,
@@ -87,6 +87,7 @@ class WinScene(arcade.View):
         self.towels_text.draw()
         self.wet_text.draw()
         self.time_text.draw()
+        self.score.draw()
         self.instructions.draw()
     
     def on_key_press(self, symbol: int, modifiers: int) -> None:
