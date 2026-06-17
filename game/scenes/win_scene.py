@@ -55,6 +55,16 @@ class WinScene(arcade.View):
             anchor_x="center",
         )
 
+        self.score = arcade.Text(
+            text=f"Pontuação total: {status['score']}",
+            x=GameConfig.WINDOW_WIDTH // 2,
+            y=GameConfig.WINDOW_HEIGHT // 2 - 180,
+            color=arcade.color.WHITE,
+            font_size=VisualConfig.MENU_SUBTITLE_SIZE,
+            font_name=VisualConfig.FONT_NAME,
+            anchor_x="center",
+        )
+        
         self.instructions = arcade.Text(
             text="Pressione ENTER para voltar ao menu",
             x=GameConfig.WINDOW_WIDTH // 2,
