@@ -1,5 +1,6 @@
 from game.core import TriggerObject
 from game.entities import Player
+from game.systems import ScoreSystem
 import arcade
 
 class WinTrigger(TriggerObject):
@@ -29,9 +30,18 @@ class WinTrigger(TriggerObject):
             self.triggered = True
 
             game_scene = self.game_window.scene_manager.game_scene # type: ignore
+
+            towels = game_scene.hud.towels
+            wet_level = game_scene.hud.wetness_level
+            time = game_scene.hud.time_elapsed
+
+            score = ScoreSystem.calculate(elapsed_time=time, wetness=wet_level, towels_collected=towels)
+
             status = {
-                "towels": game_scene.hud.towels,
-                "wet_level": game_scene.hud.wetness_level,
-                "time": game_scene.hud.time_elapsed,
+                "towels": towels,
+                "wet_level": wet_level,
+                "time": time,
+                "score": score
             }
+            
             self.game_window.scene_manager.switch_to_win(status)  # type: ignore

@@ -47,6 +47,7 @@ class VisualConfig:
     # menu
     MENU_IMAGE = "assets/images/main_menu.png"
     WIN_IMAGE = "assets/images/win_menu.png"
+    LOSE_IMAGE = "assets/images/lose_menu.png"
     MENU_TITLE_SIZE = 82
     MENU_SUBTITLE_SIZE = 20
 
@@ -88,6 +89,25 @@ class VehiclesConfig:
             "y": 200,
             "scale": 0.76
         }
+    }
+
+class TowelsConfig:
+    TOWELS = {
+        "towels_1":  {"path": "assets/images/towels.png", "x": -8200,  "y": 300},
+        "towels_2":  {"path": "assets/images/towels.png", "x": -7500,  "y": 200},
+        "towels_3":  {"path": "assets/images/towels.png", "x": -6800,  "y": 250},
+        "towels_4":  {"path": "assets/images/towels.png", "x": -6000,  "y": 350},
+        "towels_5":  {"path": "assets/images/towels.png", "x": -5200,  "y": 200},
+        "towels_6":  {"path": "assets/images/towels.png", "x": -4500,  "y": 200},
+        "towels_7": {"path": "assets/images/towels.png", "x": -3800,  "y": 400},
+        "towels_8": {"path": "assets/images/towels.png", "x": -3000,  "y": 250},
+        "towels_9": {"path": "assets/images/towels.png", "x": -2200,  "y": 150},
+        "towels_10": {"path": "assets/images/towels.png", "x": -1500,  "y": 450},
+        "towels_11": {"path": "assets/images/towels.png", "x": -800,   "y": 400},
+        "towels_12": {"path": "assets/images/towels.png", "x": 0,      "y": 150},
+        "towels_13": {"path": "assets/images/towels.png", "x": 700,    "y": 400},
+        "towels_14": {"path": "assets/images/towels.png", "x": 1400,   "y": 300},
+        "towels_15": {"path": "assets/images/towels.png", "x": 2100,   "y": 450},
     }
 
 class GameConfig:

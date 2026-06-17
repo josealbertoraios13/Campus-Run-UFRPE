@@ -28,7 +28,7 @@ class MenuScene(arcade.View):
         
         # Create instructions text
         self.instructions = arcade.Text(
-            text="Press SPACE to Start",
+            text="Aperte ENTER para começar",
             x=GameConfig.WINDOW_WIDTH // 2,
             y=GameConfig.WINDOW_HEIGHT // 2 - 120,
             color=arcade.color.WHITE,
@@ -51,5 +51,7 @@ class MenuScene(arcade.View):
         self.instructions.draw()
     
     def on_key_press(self, symbol: int, modifiers: int) -> None:
-        if symbol == arcade.key.SPACE:
+        if symbol == arcade.key.ENTER:
             self.window.scene_manager.switch_to_game()  # type: ignore
+        elif symbol == arcade.key.ESCAPE:
+            self.window.close()

@@ -25,8 +25,12 @@ class HudSystem:
     def remove_wetness(self, amount: float) -> None:
         self.wetness_level = max(0, self.wetness_level - amount)
 
+    def add_towels(self) -> None:
+        self.towels += 1
+        self.remove_wetness(15)
+    
     def update(self, delta_time: float) -> None:
-        self.add_wetness(0.25)
+        self.add_wetness(0.35)
         self.time_elapsed += delta_time
 
     def draw(self) -> None:

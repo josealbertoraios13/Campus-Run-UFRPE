@@ -4,9 +4,10 @@ from game.core.config import VehiclesConfig
 import arcade
 
 class VehiclesSceneManager:
-
     def __init__(self) -> None:
-        self.vehicles = {}
+        self.vehicles: dict[str, SceneObject] = {}
+        self._spawned = False
+
         for vehicle_name, config in VehiclesConfig.VEHICLES.items():
             vehicle = SceneObject(
                 path=config["path"],
@@ -16,14 +17,18 @@ class VehiclesSceneManager:
             vehicle.scale = config["scale"]
             self.vehicles[vehicle_name] = vehicle
         
-        # Manter compatibilidade com acessos diretos
-        self.uno = self.vehicles["uno"]
-        self.gol = self.vehicles["gol"]
-        self.hb20 = self.vehicles["hb20"]
-        self.byd = self.vehicles["byd"]
-        self.scania = self.vehicles["scania"]
-        self.bus = self.vehicles["bus"]
+    def __getattr__(self, name: str) -> SceneObject:
+        vehicles = self.__dict__.get("vehicles", {})
+        if name in vehicles:
+            return vehicles[name]
+        
+        raise AttributeError(f"Veículo '{name}' não encontrado.")
 
     def on_spawn(self, sprite_list: arcade.SpriteList) -> None:
+        if self._spawned:
+            return
+
         for vehicle in self.vehicles.values():
             sprite_list.append(vehicle)
+
+        self._spawned = True

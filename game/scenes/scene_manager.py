@@ -1,6 +1,7 @@
 from game.scenes.game_scene import GameScene
 from game.scenes.menu_scene import MenuScene
 from game.scenes.win_scene import WinScene
+from game.scenes.lose_scene import LoseScene
 
 import arcade
 
@@ -24,6 +25,13 @@ class SceneManager:
         self.win_scene.window = self.window
         self.window.show_view(self.win_scene)
         self.current_scene = "win"
+
+    def switch_to_lose(self) -> None:
+        self.lose_scene = LoseScene()
+        self.lose_scene.window = self.window
+
+        self.window.show_view(self.lose_scene)
+        self.current_scene = "lose"
 
     def switch_to_menu(self) -> None:
         self.window.show_view(self.menu_scene)

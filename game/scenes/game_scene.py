@@ -1,4 +1,4 @@
-from game.entities import Player, SceneObject, VehiclesSceneManager, WinTrigger
+from game.entities import Player, SceneObject, VehiclesSceneManager, TowelsSceneManager, WinTrigger
 from game.systems import InputSystem, PhysicsSystem, AnimationSystem, CameraSystem, RainSystem, HudSystem
 from game.core import PhysicsConfig, VisualConfig, GameConfig
 
@@ -14,7 +14,8 @@ class GameScene(arcade.View):
         self.player_list = arcade.SpriteList()
         self.obstacle = arcade.SpriteList()
         self.plataform_list = arcade.SpriteList()
-        self.trigger_list = arcade.SpriteList()  # ← lista de triggers
+        self.trigger_win_list = arcade.SpriteList()
+        self.towels = arcade.SpriteList()
         
         self._setup_platforms()
 
@@ -37,7 +38,7 @@ class GameScene(arcade.View):
         self.win_trigger = WinTrigger(window=self.window)
         
         self.win_trigger.on_spawn(
-            sprite_list=self.trigger_list,
+            sprite_list=self.trigger_win_list,
             physics_engine=self.physics_engine
         )
         
@@ -100,6 +101,9 @@ class GameScene(arcade.View):
         self.obstacle_manager = VehiclesSceneManager()
         self.obstacle_manager.on_spawn(self.obstacle)
 
+        self.towels_manager = TowelsSceneManager(window=self.window)
+        self.towels_manager.on_spawn(sprite_list=self.towels, physics_engine=self.physics_engine)
+
         self.rain = RainSystem()
     
     def _setup_platforms(self) -> None:
@@ -134,6 +138,7 @@ class GameScene(arcade.View):
         self.physics_engine.update()
 
         self.obstacle.update()
+        self.towels.update()
         
         self.physics_system.update(delta_time) 
         self.animation_system.update(delta_time)   
@@ -143,7 +148,11 @@ class GameScene(arcade.View):
         
         self.hud.update(delta_time=delta_time)
 
-        self.win_trigger.check_trigger(self.player_list) 
+        if self.hud.wetness_level >= 100:
+            self.window.scene_manager.switch_to_lose() # type: ignore
+
+        self.win_trigger.check_trigger(sprite_list=self.player_list) 
+        self.towels_manager.check_triggers(sprite_list=self.player_list)
     
     def on_draw(self) -> None:
         self.clear()
@@ -152,11 +161,12 @@ class GameScene(arcade.View):
         
         self.departament_list.draw()
         self.obstacle.draw()
+        self.towels.draw()
         self.rain.rain_shapes.draw() 
         self.plataform_list.draw()
         self.player_list.draw()
 
-        self.trigger_list.draw()
+        self.trigger_win_list.draw()
 
         self.gui_camera.use()
         self.hud.draw()

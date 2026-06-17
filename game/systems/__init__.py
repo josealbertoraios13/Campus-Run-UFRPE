@@ -4,6 +4,7 @@ from game.systems.animation_system import AnimationSystem
 from game.systems.camera_system import CameraSystem 
 from game.systems.rain_system import RainSystem
 from game.systems.hud_system import HudSystem
+from game.systems.score_system import ScoreSystem
 
 __all__ = [
     "InputSystem", 
@@ -11,4 +12,5 @@ __all__ = [
     "AnimationSystem", 
     "CameraSystem", 
     "RainSystem",
-    "HudSystem"]
+    "HudSystem",
+    "ScoreSystem"]
