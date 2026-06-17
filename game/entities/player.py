@@ -15,7 +15,6 @@ class Player(GameObject):
         self.facing_right = False
 
         self.center_x = PlayerConfig.START_X
-        #self.center_x = -10000
         self.center_y = PlayerConfig.START_Y
 
         self.scale = 1.0

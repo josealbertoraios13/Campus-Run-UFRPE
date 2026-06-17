@@ -20,11 +20,11 @@ class PhysicsSystem(System):
             return
         
         if self.player.left_pressed:
-            self.player.change_x = -PlayerConfig.VELOCITY * delta_time
+            self.player.change_x = -PlayerConfig.VELOCITY
             self.player.is_running = True
         
         elif self.player.right_pressed:
-            self.player.change_x = PlayerConfig.VELOCITY * delta_time
+            self.player.change_x = PlayerConfig.VELOCITY
             self.player.is_running = True
 
         else:
@@ -33,7 +33,7 @@ class PhysicsSystem(System):
 
     def _update_vertical_moviment(self, delta_time: float) -> None:
         if self.player.jumped and self.player.physics_engine.can_jump():
-            self.player.change_y = PlayerConfig.JUMP_FORCE * delta_time
+            self.player.change_y = PlayerConfig.JUMP_FORCE
 
     def _update_direction(self) -> None:
         if self.player.right_pressed and not self.player.left_pressed:

@@ -1,6 +1,6 @@
 class PlayerConfig:
-    VELOCITY = 500
-    JUMP_FORCE = 1000
+    VELOCITY = 10
+    JUMP_FORCE = 16
 
     # Para as animações
     IDLE_FRAME_RATE = 0.07
