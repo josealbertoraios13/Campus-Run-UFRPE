@@ -1,9 +1,9 @@
-from core.base import (System, GameObject, InputHandler)
-from core.config import (PlayerConfig, CameraConfig, GameConfig, PhysicsConfig, RainConfig, VisualConfig)
-from core.enums import (GameState, PlayerState, Direction, EventType)
+from game.core.base import (System, GameObject, TriggerObject, InputHandler)
+from game.core.config import (PlayerConfig, CameraConfig, GameConfig, PhysicsConfig, RainConfig, VisualConfig)
+from game.core.enums import (GameState, PlayerState, Direction)
 
 __all__ = [
-    "System", "GameObject", "InputHandler",
+    "System", "GameObject", "TriggerObject", "InputHandler",
     "PlayerConfig", "CameraConfig", "PhysicsConfig", "GameConfig", "RainConfig", "VisualConfig",
-    "GameState", "PlayerState", "Direction", "EventType"
+    "GameState", "PlayerState", "Direction"
 ]

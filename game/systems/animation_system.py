@@ -1,5 +1,5 @@
-from core import System, PlayerConfig
-from entities import Player
+from game.core import System, PlayerConfig
+from game.entities import Player
 
 import arcade
 
@@ -26,6 +26,9 @@ class AnimationSystem(System):
             columns=PlayerConfig.SPRITE_COLUMNS,
             count=PlayerConfig.RUN_FRAME_COUNT
         )
+        
+        # Definir textura inicial (primeiro frame de idle)
+        self.player.texture = arcade.Texture(image=self.idle_frames[0])
 
     def update(self, delta_time: float) -> None:
         if self.player.is_running:
@@ -39,13 +42,13 @@ class AnimationSystem(System):
         if self.animation_timer >= PlayerConfig.IDLE_FRAME_RATE:
             self.animation_timer = 0
 
-            self.cur_texture += 1
+            self.current_frame += 1
 
-            if self.cur_texture >= len(self.idle_frames):
-                self.cur_texture = 0
+            if self.current_frame >= len(self.idle_frames):
+                self.current_frame = 0
 
-            self.texture = arcade.Texture(
-                image=self.idle_frames[self.cur_texture]
+            self.player.texture = arcade.Texture(
+                image=self.idle_frames[self.current_frame]
             )
 
     def _update_run_animation(self, delta_time: float) -> None:
@@ -54,13 +57,13 @@ class AnimationSystem(System):
         if self.animation_timer >= PlayerConfig.RUN_FRAME_RATE:
             self.animation_timer = 0
             
-            self.cur_texture += 1
+            self.current_frame += 1
 
-            if self.cur_texture >= len(self.run_frames):
-                self.cur_texture = 0
+            if self.current_frame >= len(self.run_frames):
+                self.current_frame = 0
 
-            self.texture = arcade.Texture(
-                image=self.run_frames[self.cur_texture]
+            self.player.texture = arcade.Texture(
+                image=self.run_frames[self.current_frame]
             )
 
     def reset(self) -> None:

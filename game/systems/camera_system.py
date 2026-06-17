@@ -2,10 +2,10 @@
 Sistema da Camera
 """
 
-from core import System
-from core import CameraConfig
+from game.core import System
+from game.core import CameraConfig
 
-from entities import Player
+from game.entities import Player
 
 import arcade
 

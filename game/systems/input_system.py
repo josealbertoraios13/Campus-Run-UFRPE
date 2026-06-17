@@ -1,5 +1,5 @@
-from core import InputHandler
-from entities import Player
+from game.core import InputHandler
+from game.entities import Player
 
 import arcade
 

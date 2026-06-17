@@ -1,5 +1,5 @@
-from core import System, PlayerConfig, Direction
-from entities import Player
+from game.core import System, PlayerConfig
+from game.entities import Player
 
 class PhysicsSystem(System):
 
@@ -38,7 +38,8 @@ class PhysicsSystem(System):
     def _update_direction(self) -> None:
         if self.player.right_pressed and not self.player.left_pressed:
             self.player.facing_right = False
-            self.player.scale_x = Direction.LEFT
+            self.player.scale_x = 1
             
         elif self.player.left_pressed and not self.player.right_pressed:
-            self.player.scale_x = Direction.RIGHT  
+            self.player.facing_right = True
+            self.player.scale_x = -1  
