@@ -85,6 +85,7 @@ A pontuação final é calculada com base em três fatores:
 ## 👥 Equipe
 
 Desenvolvido por estudantes do curso de **Sistemas de Informação — UFRPE**.
+José Alberto e Tomás Kavela.
 
 ---
 
