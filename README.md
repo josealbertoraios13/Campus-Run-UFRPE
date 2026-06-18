@@ -229,6 +229,12 @@ Este projeto foi desenvolvido para aplicar conhecimentos de:
 
 ---
 
+## 📑 Relatório de Aprendizagem
+
+### Tomás José Kavela
+
+📄 Relatório: https://drive.google.com/drive/folders/1qOIyOcdcK_uPDSFQuaUcS06wNzWhghbc
+
 ## 📄 Licença
 
 Este projeto possui finalidade exclusivamente acadêmica e educacional, não sendo destinado a fins comerciais.
