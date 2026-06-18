@@ -110,7 +110,7 @@ class TowelsConfig:
         "towels_15": {"path": "assets/images/towels.png", "x": 2100,   "y": 450},
     }
 
-class GameConfig:
+class WindowConfig:
     WINDOW_WIDTH  = 1280
     WINDOW_HEIGHT = 720
     TITLE = "Campus Run: UFRPE"

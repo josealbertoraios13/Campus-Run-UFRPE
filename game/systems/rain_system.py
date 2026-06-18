@@ -1,7 +1,7 @@
 import arcade
 
 from game.entities.rain_drop import RainDrop
-from game.core.config import GameConfig
+from game.core.config import WindowConfig
 
 
 class RainSystem:
@@ -23,8 +23,8 @@ class RainSystem:
                 delta_time=delta_time,
                 camera_x=camera_x,
                 camera_y=camera_y,
-                screen_width=GameConfig.WINDOW_WIDTH,
-                screen_height=GameConfig.WINDOW_HEIGHT
+                screen_width=WindowConfig.WINDOW_WIDTH,
+                screen_height=WindowConfig.WINDOW_HEIGHT
             )
         
         self.rain_shapes = arcade.shape_list.ShapeElementList()

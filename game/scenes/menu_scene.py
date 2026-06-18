@@ -1,4 +1,4 @@
-from game.core import VisualConfig, GameConfig
+from game.core import VisualConfig, WindowConfig
 from pathlib import Path
 import arcade
 
@@ -18,8 +18,8 @@ class MenuScene(arcade.View):
         # Create title text
         self.title = arcade.Text(
             text="Campus Run UFRPE",
-            x=GameConfig.WINDOW_WIDTH // 2,
-            y=GameConfig.WINDOW_HEIGHT // 2 + 200,
+            x=WindowConfig.WINDOW_WIDTH // 2,
+            y=WindowConfig.WINDOW_HEIGHT // 2 + 200,
             color=arcade.color.WHITE,
             font_size=VisualConfig.MENU_TITLE_SIZE,
             font_name=VisualConfig.FONT_NAME,
@@ -29,8 +29,8 @@ class MenuScene(arcade.View):
         # Create instructions text
         self.instructions = arcade.Text(
             text="Aperte ENTER para começar",
-            x=GameConfig.WINDOW_WIDTH // 2,
-            y=GameConfig.WINDOW_HEIGHT // 2 - 120,
+            x=WindowConfig.WINDOW_WIDTH // 2,
+            y=WindowConfig.WINDOW_HEIGHT // 2 - 120,
             color=arcade.color.WHITE,
             font_size=VisualConfig.MENU_SUBTITLE_SIZE,
             font_name=VisualConfig.FONT_NAME,
@@ -43,7 +43,7 @@ class MenuScene(arcade.View):
         # Draw background image
         arcade.draw_texture_rect(
             texture=self.background,
-            rect=arcade.LBWH(0, 0, GameConfig.WINDOW_WIDTH, GameConfig.WINDOW_HEIGHT)
+            rect=arcade.LBWH(0, 0, WindowConfig.WINDOW_WIDTH, WindowConfig.WINDOW_HEIGHT)
         )
         
         # Draw texts

@@ -1,6 +1,6 @@
 from game.entities import Player, SceneObject, VehiclesSceneManager, TowelsSceneManager, WinTrigger
 from game.systems import InputSystem, PhysicsSystem, AnimationSystem, CameraSystem, RainSystem, HudSystem
-from game.core import PhysicsConfig, VisualConfig, GameConfig
+from game.core import PhysicsConfig, VisualConfig, WindowConfig
 
 import arcade
 
@@ -112,7 +112,7 @@ class GameScene(arcade.View):
         platform_scale = 0.4
         tile_width = ground_texture.width * platform_scale 
         
-        total_width = GameConfig.WINDOW_WIDTH * PhysicsConfig.GROUND_WIDTH_MULTIPLIER
+        total_width = WindowConfig.WINDOW_WIDTH * PhysicsConfig.GROUND_WIDTH_MULTIPLIER
         num_tiles = int(total_width / tile_width) + 50
         
         start_x = -13000
@@ -173,6 +173,9 @@ class GameScene(arcade.View):
     
     def on_key_press(self, symbol: int, modifiers: int) -> None:
         self.input_system.on_key_press(symbol)
+
+        if symbol == arcade.key.ESCAPE:
+            self.window.scene_manager.switch_to_menu() # type: ignore
     
     def on_key_release(self, symbol: int, modifiers: int) -> None:
         self.input_system.on_key_release(symbol)

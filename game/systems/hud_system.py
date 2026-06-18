@@ -1,4 +1,4 @@
-from game.core.config import GameConfig
+from game.core.config import WindowConfig
 import arcade
 
 class HudSystem:
@@ -7,7 +7,7 @@ class HudSystem:
         self.wetness_level = 0
         self.time_elapsed = 0.0
 
-        self.pos_y = GameConfig.WINDOW_HEIGHT - 50
+        self.pos_y = WindowConfig.WINDOW_HEIGHT - 50
 
         self.icons = arcade.SpriteList()
 

@@ -1,4 +1,4 @@
-from game.core import VisualConfig, GameConfig
+from game.core import VisualConfig, WindowConfig
 from pathlib import Path
 import arcade
 
@@ -17,8 +17,8 @@ class WinScene(arcade.View):
         
         self.title = arcade.Text(
             text="VOCÊ VENCEU!!",
-            x=GameConfig.WINDOW_WIDTH // 2,
-            y=GameConfig.WINDOW_HEIGHT // 2 + 200,
+            x=WindowConfig.WINDOW_WIDTH // 2,
+            y=WindowConfig.WINDOW_HEIGHT // 2 + 200,
             color=arcade.color.WHITE,
             font_size=VisualConfig.MENU_TITLE_SIZE,
             font_name=VisualConfig.FONT_NAME,
@@ -27,8 +27,8 @@ class WinScene(arcade.View):
         
         self.towels_text = arcade.Text(
             text=f"Toalhas coletadas: {status['towels']}",
-            x=GameConfig.WINDOW_WIDTH // 2,
-            y=GameConfig.WINDOW_HEIGHT // 2 - 60,
+            x=WindowConfig.WINDOW_WIDTH // 2,
+            y=WindowConfig.WINDOW_HEIGHT // 2 - 60,
             color=arcade.color.WHITE,
             font_size=VisualConfig.MENU_SUBTITLE_SIZE,
             font_name=VisualConfig.FONT_NAME,
@@ -37,8 +37,8 @@ class WinScene(arcade.View):
 
         self.wet_text = arcade.Text(
             text=f"Nível de molhado: {status['wet_level']:.2f}%",
-            x=GameConfig.WINDOW_WIDTH // 2,
-            y=GameConfig.WINDOW_HEIGHT // 2 - 120,
+            x=WindowConfig.WINDOW_WIDTH // 2,
+            y=WindowConfig.WINDOW_HEIGHT // 2 - 120,
             color=arcade.color.WHITE,
             font_size=VisualConfig.MENU_SUBTITLE_SIZE,
             font_name=VisualConfig.FONT_NAME,
@@ -47,8 +47,8 @@ class WinScene(arcade.View):
 
         self.time_text = arcade.Text(
             text=f"Tempo: {status['time']:.2f}s",
-            x=GameConfig.WINDOW_WIDTH // 2,
-            y=GameConfig.WINDOW_HEIGHT // 2 - 180,
+            x=WindowConfig.WINDOW_WIDTH // 2,
+            y=WindowConfig.WINDOW_HEIGHT // 2 - 180,
             color=arcade.color.WHITE,
             font_size=VisualConfig.MENU_SUBTITLE_SIZE,
             font_name=VisualConfig.FONT_NAME,
@@ -57,8 +57,8 @@ class WinScene(arcade.View):
 
         self.score = arcade.Text(
             text=f"Pontuação total: {status['score']}",
-            x=GameConfig.WINDOW_WIDTH // 2,
-            y=GameConfig.WINDOW_HEIGHT // 2 - 240,
+            x=WindowConfig.WINDOW_WIDTH // 2,
+            y=WindowConfig.WINDOW_HEIGHT // 2 - 240,
             color=arcade.color.WHITE,
             font_size=VisualConfig.MENU_SUBTITLE_SIZE,
             font_name=VisualConfig.FONT_NAME,
@@ -67,8 +67,8 @@ class WinScene(arcade.View):
         
         self.instructions = arcade.Text(
             text="Pressione ENTER para voltar ao menu",
-            x=GameConfig.WINDOW_WIDTH // 2,
-            y=GameConfig.WINDOW_HEIGHT // 2 - 280,
+            x=WindowConfig.WINDOW_WIDTH // 2,
+            y=WindowConfig.WINDOW_HEIGHT // 2 - 280,
             color=arcade.color.WHITE,
             font_size=VisualConfig.MENU_SUBTITLE_SIZE,
             font_name=VisualConfig.FONT_NAME,
@@ -80,7 +80,7 @@ class WinScene(arcade.View):
         
         arcade.draw_texture_rect(
             texture=self.background,
-            rect=arcade.LBWH(0, 0, GameConfig.WINDOW_WIDTH, GameConfig.WINDOW_HEIGHT)
+            rect=arcade.LBWH(0, 0, WindowConfig.WINDOW_WIDTH, WindowConfig.WINDOW_HEIGHT)
         )
 
         self.title.draw()
