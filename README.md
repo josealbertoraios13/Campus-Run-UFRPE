@@ -8,15 +8,15 @@
 
 **Campus Run UFRPE** é um jogo de plataforma 2D desenvolvido em Python utilizando a biblioteca Arcade.
 
-O jogador controla **Beto**, um estudante que precisa atravessar diferentes áreas do campus da UFRPE em um dia chuvoso. Durante a jornada, ele deve evitar obstáculos, desviar de veículos e coletar toalhas espalhadas pelo cenário para reduzir o nível de molhado.
+No jogo, o jogador controla **Beto**, um estudante que precisa atravessar o campus da UFRPE em um dia chuvoso. Durante o percurso, ele deve evitar obstáculos, desviar de veículos e coletar toalhas espalhadas pelo cenário para reduzir seu nível de molhado.
 
-O objetivo é chegar ao destino final com a melhor pontuação possível, considerando o tempo gasto, a quantidade de toalhas coletadas e o nível de molhado ao final da partida.
+O objetivo é chegar ao destino final no menor tempo possível, coletando o máximo de toalhas e mantendo o personagem o mais seco possível.
 
 ---
 
 ## 🗺️ Cenário
 
-O mapa do jogo foi inspirado em locais reais da Universidade Federal Rural de Pernambuco, proporcionando uma experiência próxima da realidade dos estudantes.
+O mapa foi inspirado em locais reais da Universidade Federal Rural de Pernambuco, proporcionando uma experiência familiar para estudantes e visitantes do campus.
 
 ### Locais presentes no jogo
 
@@ -83,7 +83,7 @@ python main.py
 
 ## 🎮 Controles
 
-| Tecla  | Função                |
+| Tecla  | Ação                  |
 | ------ | --------------------- |
 | ⬅️     | Mover para a esquerda |
 | ➡️     | Mover para a direita  |
@@ -93,7 +93,7 @@ python main.py
 
 ## 🏆 Sistema de Pontuação
 
-A pontuação final é calculada com base nos seguintes critérios:
+A pontuação final é calculada com base em três fatores:
 
 | Critério           | Peso |
 | ------------------ | ---- |
@@ -101,7 +101,7 @@ A pontuação final é calculada com base nos seguintes critérios:
 | Nível de molhado   | 30%  |
 | Toalhas coletadas  | 20%  |
 
-Quanto mais rápido o jogador concluir o percurso, menos molhado estiver e mais toalhas coletar, melhor será sua pontuação.
+Quanto menor o tempo e o nível de molhado, e quanto maior o número de toalhas coletadas, melhor será o desempenho do jogador.
 
 ---
 
@@ -109,23 +109,23 @@ Quanto mais rápido o jogador concluir o percurso, menos molhado estiver e mais 
 
 ### 🏠 Tela Inicial
 
-![Tela Inicial](screenshots/inicio.png)
+![Tela Inicial](inicio.png)
 
-Tela inicial do jogo, apresentando o personagem principal e o início da aventura.
+Tela inicial do jogo, apresentando o personagem principal e o início da aventura pelo campus.
 
 ---
 
 ### 🏃 Gameplay
 
-![Gameplay](screenshots/tela.png)
+![Gameplay](tela.png)
 
-O jogador percorre o campus enfrentando obstáculos e coletando toalhas para permanecer seco durante a jornada.
+Durante a partida, o jogador percorre o campus enfrentando obstáculos e coletando toalhas para permanecer seco.
 
 ---
 
 ### 🏆 Tela de Vitória
 
-![Vitória](screenshots/voce_venceu.png)
+![Vitória](voce_venceu.png)
 
 Ao concluir o percurso com sucesso, o jogador recebe uma mensagem de vitória e sua avaliação final.
 
@@ -133,7 +133,7 @@ Ao concluir o percurso com sucesso, o jogador recebe uma mensagem de vitória e 
 
 ### ☔ Tela de Derrota
 
-![Derrota](screenshots/voce_perdeu.png)
+![Derrota](voce_perdeu.png)
 
 Caso o personagem fique completamente molhado antes de chegar ao destino, a partida é encerrada e a tela de derrota é exibida.
 
@@ -141,15 +141,15 @@ Caso o personagem fique completamente molhado antes de chegar ao destino, a part
 
 ## 🎯 Objetivos do Projeto
 
-Este projeto foi desenvolvido com o objetivo de aplicar conceitos estudados ao longo do curso, incluindo:
+Este projeto foi desenvolvido para aplicar conhecimentos de:
 
 * Programação Orientada a Objetos (POO)
 * Desenvolvimento de Jogos 2D
 * Estruturas de Dados
 * Manipulação de Eventos
-* Organização de Projetos em Python
+* Desenvolvimento com Python
 * Controle de Versão com Git
-* Desenvolvimento Colaborativo com GitHub
+* Trabalho Colaborativo com GitHub
 
 ---
 
@@ -159,12 +159,10 @@ Este projeto foi desenvolvido com o objetivo de aplicar conceitos estudados ao l
 Campus-Run-UFRPE/
 │
 ├── assets/
-├── screenshots/
-│   ├── inicio.png
-│   ├── tela.png
-│   ├── voce_venceu.png
-│   └── voce_perdeu.png
-│
+├── inicio.png
+├── tela.png
+├── voce_venceu.png
+├── voce_perdeu.png
 ├── main.py
 ├── requirements.txt
 └── README.md
