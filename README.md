@@ -109,7 +109,7 @@ Quanto menor o tempo e o nível de molhado, e quanto maior o número de toalhas 
 
 ### 🏠 Tela Inicial
 
-![Tela Inicial](inicio.png)
+![Tela Inicial](screenshots/inicio.png)
 
 Tela inicial do jogo, apresentando o personagem principal e o início da aventura pelo campus.
 
@@ -117,7 +117,7 @@ Tela inicial do jogo, apresentando o personagem principal e o início da aventur
 
 ### 🏃 Gameplay
 
-![Gameplay](tela.png)
+![Gameplay](screenshots/tela.png)
 
 Durante a partida, o jogador percorre o campus enfrentando obstáculos e coletando toalhas para permanecer seco.
 
@@ -125,7 +125,7 @@ Durante a partida, o jogador percorre o campus enfrentando obstáculos e coletan
 
 ### 🏆 Tela de Vitória
 
-![Vitória](voce_venceu.png)
+![Vitória](screenshots/voce_venceu.png)
 
 Ao concluir o percurso com sucesso, o jogador recebe uma mensagem de vitória e sua avaliação final.
 
@@ -133,7 +133,7 @@ Ao concluir o percurso com sucesso, o jogador recebe uma mensagem de vitória e 
 
 ### ☔ Tela de Derrota
 
-![Derrota](voce_perdeu.png)
+![Derrota](screenshots/voce_perdeu.png)
 
 Caso o personagem fique completamente molhado antes de chegar ao destino, a partida é encerrada e a tela de derrota é exibida.
 
@@ -156,36 +156,76 @@ Este projeto foi desenvolvido para aplicar conhecimentos de:
 ## 📂 Estrutura do Projeto
 
 ```text
-Campus-Run-UFRPE/
-│
-├── assets/
-├── inicio.png
-├── tela.png
-├── voce_venceu.png
-├── voce_perdeu.png
+.
+├── assets
+│   ├── font
+│   │   └── Jersey10-Regular.ttf
+│   ├── images
+│   │   ├── bar-da-curva.png
+│   │   ├── bus.png
+│   │   ├── byd.png
+│   │   ├── ceagri2.png
+│   │   ├── clock.png
+│   │   ├── deinfo.png
+│   │   ├── gol.png
+│   │   ├── ground.png
+│   │   ├── hb20.png
+│   │   ├── lose_menu.png
+│   │   ├── main_menu.png
+│   │   ├── scania.png
+│   │   ├── towels.png
+│   │   ├── ufrpe.png
+│   │   ├── uno.png
+│   │   ├── wetness.png
+│   │   └── win_menu.png
+│   └── sprites
+│       └── player
+│           ├── beto-idle.png
+│           └── beto-run.png
+├── game
+│   ├── core
+│   │   ├── base.py
+│   │   ├── config.py
+│   │   ├── enums.py
+│   │   └── __init__.py
+│   ├── entities
+│   │   ├── __init__.py
+│   │   ├── player.py
+│   │   ├── rain_drop.py
+│   │   ├── scene_object.py
+│   │   ├── towels.py
+│   │   ├── towels_scene_manager.py
+│   │   ├── vehicles_scene_manager.py
+│   │   └── win_trigger.py
+│   ├── game_manager.py
+│   ├── game.py
+│   ├── __init__.py
+│   ├── scenes
+│   │   ├── game_scene.py
+│   │   ├── __init__.py
+│   │   ├── lose_scene.py
+│   │   ├── menu_scene.py
+│   │   ├── scene_manager.py
+│   │   └── win_scene.py
+│   └── systems
+│       ├── animation_system.py
+│       ├── camera_system.py
+│       ├── hud_system.py
+│       ├── __init__.py
+│       ├── input_system.py
+│       ├── physics_system.py
+│       ├── rain_system.py
+│       └── score_system.py
 ├── main.py
+├── README.md
 ├── requirements.txt
-└── README.md
+└── screenshots
+    ├── inicio.png
+    ├── README.md
+    ├── tela.png
+    ├── voce_perdeu.png
+    └── voce_venceu.png
 ```
-
----
-
-## 👥 Equipe
-
-Projeto desenvolvido por estudantes do curso de **Sistemas de Informação — UFRPE**.
-
-* José Alberto
-* Tomás Kavela
-
----
-
-## 🎓 Instituição
-
-**Universidade Federal Rural de Pernambuco (UFRPE)**
-
-Disciplina: Projeto Interdisciplinar de Sistemas de Informação
-
-Ano: 2026
 
 ---
 
