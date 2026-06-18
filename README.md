@@ -4,57 +4,77 @@
 
 ---
 
-## 📖 Sobre o jogo
+## 📖 Sobre o Jogo
 
-Campus Run UFRPE é um jogo de plataforma 2D onde o jogador controla **Beto**, um estudante que precisa atravessar o campus da UFRPE até o destino final sem se molhar completamente com a chuva.
+**Campus Run UFRPE** é um jogo de plataforma 2D desenvolvido em Python utilizando a biblioteca Arcade. O jogador controla **Beto**, um estudante que precisa atravessar diferentes áreas do campus da UFRPE em um dia chuvoso, enfrentando obstáculos e desafios até alcançar seu destino final.
 
-Ao longo do caminho, Beto encontra veículos como obstáculos, pode coletar toalhas espalhadas pelo mapa para reduzir o nível de molhado, e é avaliado ao final por tempo, quantidade de toalhas coletadas e o quão seco chegou.
+Durante a jornada, o personagem deve evitar veículos, superar obstáculos e coletar toalhas espalhadas pelo cenário para reduzir o nível de molhado causado pela chuva. Ao final da partida, o desempenho do jogador é avaliado com base no tempo de conclusão, quantidade de toalhas coletadas e condição final do personagem.
+
+O projeto foi desenvolvido com fins acadêmicos para aplicar conceitos de programação, desenvolvimento de jogos digitais e trabalho colaborativo utilizando Git e GitHub.
 
 ---
 
 ## 🗺️ Cenário
 
-O mapa percorre pontos reais do campus, incluindo:
+O mapa do jogo foi inspirado em locais reais da Universidade Federal Rural de Pernambuco (UFRPE), proporcionando uma experiência próxima da vivenciada pelos estudantes.
 
-- **Bar da Curva**
-- **UFRPE** (sede principal)
-- **DEINFO** (Departamento de Estatística e Informática)
-- **CEAGRI 2**
+Locais representados no jogo:
 
----
-
-## ⚙️ Requisitos
-
-- Python 3.11+
-- [arcade](https://api.arcade.academy/) 3.x
+* 📍 Bar da Curva
+* 📍 UFRPE (Sede Principal)
+* 📍 DEINFO (Departamento de Estatística e Informática)
+* 📍 CEAGRI II
 
 ---
 
-## 🚀 Como rodar
+## ⚙️ Tecnologias Utilizadas
 
-**1. Clone o repositório**
+* Python 3
+* Arcade 3.x
+* Pyglet
+* Pillow
+* Git
+* GitHub
+
+---
+
+## 🚀 Como Executar o Projeto
+
+### 1. Clonar o Repositório
+
 ```bash
 git clone https://github.com/seu-usuario/Campus-Run-UFRPE.git
 cd Campus-Run-UFRPE
 ```
 
-**2. Crie e ative o ambiente virtual**
+### 2. Criar o Ambiente Virtual
+
 ```bash
 python -m venv .venv
+```
 
-# Linux/macOS
-source .venv/bin/activate
+### 3. Ativar o Ambiente Virtual
 
-# Windows
+**Windows**
+
+```bash
 .venv\Scripts\activate
 ```
 
-**3. Instale as dependências**
+**Linux/macOS**
+
+```bash
+source .venv/bin/activate
+```
+
+### 4. Instalar as Dependências
+
 ```bash
 pip install -r requirements.txt
 ```
 
-**4. Execute o jogo**
+### 5. Executar o Jogo
+
 ```bash
 python main.py
 ```
@@ -63,32 +83,95 @@ python main.py
 
 ## 🎮 Controles
 
-| Tecla | Ação |
-|---|---|
-| `←` / `→` | Mover |
-| `Espaço` | Pular |
+| Tecla  | Função                |
+| ------ | --------------------- |
+| ⬅️     | Mover para a esquerda |
+| ➡️     | Mover para a direita  |
+| Espaço | Pular                 |
 
 ---
 
-## 🏆 Pontuação
+## 🏆 Sistema de Pontuação
 
-A pontuação final é calculada com base em três fatores:
+Ao concluir a fase, a pontuação do jogador é calculada utilizando os seguintes critérios:
 
-| Fator | Peso | Quanto melhor |
-|---|---|---|
-| Tempo | 50% | Mais rápido |
-| Nível de molhado | 30% | Menos molhado |
-| Toalhas coletadas | 20% | Mais toalhas |
+| Critério           | Peso |
+| ------------------ | ---- |
+| Tempo de conclusão | 50%  |
+| Nível de molhado   | 30%  |
+| Toalhas coletadas  | 20%  |
+
+Quanto menor o tempo e o nível de molhado, e quanto maior a quantidade de toalhas coletadas, melhor será o desempenho final.
+
+---
+
+## 📸 Capturas de Tela
+
+### 🏠 Tela Inicial
+
+![Tela Inicial](screenshots/Campus%20Run_%20UFRPE%2017_06_2026%2023_53_48.png)
+
+Tela inicial do jogo apresentando o personagem principal e o início da aventura pelo campus.
+
+---
+
+### 🏃 Gameplay
+
+![Gameplay](screenshots/Campus%20Run_%20UFRPE%2017_06_2026%2023_54_18.png)
+
+O jogador percorre o campus enfrentando desafios, desviando de obstáculos e coletando toalhas para permanecer seco.
+
+---
+
+### 🚗 Obstáculos e Desafios
+
+![Obstáculos](screenshots/Campus%20Run_%20UFRPE%2017_06_2026%2023_54_58.png)
+
+Os veículos presentes no cenário tornam a travessia mais difícil e exigem atenção constante do jogador.
+
+---
+
+### 🏆 Tela de Vitória
+
+![Vitória](screenshots/voce_venceu.png)
+
+Ao concluir o percurso com sucesso, o jogador recebe uma tela de vitória celebrando sua chegada ao destino final.
+
+---
+
+## 🎯 Objetivos do Projeto
+
+Este projeto foi desenvolvido para aplicar conhecimentos relacionados a:
+
+* Programação Orientada a Objetos (POO)
+* Desenvolvimento de Jogos 2D
+* Estruturas de Dados
+* Manipulação de Eventos
+* Organização de Projetos Python
+* Controle de Versão com Git
+* Desenvolvimento Colaborativo com GitHub
 
 ---
 
 ## 👥 Equipe
 
-Desenvolvido por estudantes do curso de **Sistemas de Informação — UFRPE**.
-José Alberto e Tomás Kavela.
+Projeto desenvolvido por estudantes do curso de **Sistemas de Informação — UFRPE**.
+
+* José Alberto
+* Tomás Kavela
 
 ---
 
 ## 📄 Licença
 
-Este projeto é de uso acadêmico e não possui fins comerciais.
+Este projeto possui finalidade exclusivamente acadêmica e educacional, não sendo destinado a fins comerciais.
+
+---
+
+## 🎓 Universidade
+
+Universidade Federal Rural de Pernambuco (UFRPE)
+
+Disciplina: Projeto Interdisciplinar de Sistemas de Informação
+
+Ano: 2026
