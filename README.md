@@ -16,9 +16,8 @@ O objetivo é chegar ao destino final no menor tempo possível, coletando o máx
 José Alberto Martins Gomes da Silva.
 https://drive.google.com/drive/folders/1g9Elb_cZtPo2EPVvyWE_K55w2ijG8Fj0?usp=sharing
 
-### Tomás José Kavela
-
-📄 Relatório: https://drive.google.com/drive/folders/1qOIyOcdcK_uPDSFQuaUcS06wNzWhghbc
+Tomás José Kavela
+Relatório: https://drive.google.com/drive/folders/1qOIyOcdcK_uPDSFQuaUcS06wNzWhghbc
 ---
 
 ## 🗺️ Cenário
