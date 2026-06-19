@@ -12,6 +12,9 @@ No jogo, o jogador controla **Beto**, um estudante que precisa atravessar o camp
 
 O objetivo é chegar ao destino final no menor tempo possível, coletando o máximo de toalhas e mantendo o personagem o mais seco possível.
 
+## Documentação
+José Alberto Martins Gomes da Silva
+https://drive.google.com/drive/folders/1g9Elb_cZtPo2EPVvyWE_K55w2ijG8Fj0?usp=sharing
 ---
 
 ## 🗺️ Cenário
